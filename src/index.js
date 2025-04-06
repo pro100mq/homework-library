@@ -113,3 +113,4 @@ const salesChart = new Chart(ctx, {
     },
   },
 });
+
