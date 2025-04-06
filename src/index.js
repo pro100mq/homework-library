@@ -19,7 +19,6 @@ document.addEventListener("keydown", (e) => {
         title: "Вітаю!",
         text: "Ви натиснули на всі клавіші правильно",
       });
-      document.removeEventListener("keydown", keyDown);
     }
   } else {
     PNotify.error({
@@ -28,13 +27,11 @@ document.addEventListener("keydown", (e) => {
     });
   }
   updateKey();
-  document.addEventListener("keydown", keyDown);
 });
 
 function startNewGame() {
   currentIndexKey = 0;
   updateKey();
-  document.addEventListener("keydown", keyDown);
 }
 
 newGame.addEventListener("click", startNewGame);
