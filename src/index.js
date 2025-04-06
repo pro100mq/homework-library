@@ -89,28 +89,16 @@ const chartData = {
   ],
 };
 
-// const config = {
-//   type: "line",
-//   data: data,
-//   options: {},
-// };
-
-// const ctx = document.getElementById("sales-chart");
-
-// const salesChart = new Chart(ctx, {
-//   type: "line",
-//   data: data,
-//   options: {
-//     responsive: true,
-//     plugins: {
-//       legend: {
-//         position: "top",
-//       },
-//       title: {
-//         display: true,
-//         text: "Chart.js Line Chart",
-//       },
-//     },
-//   },
-// });
-
+const ctx = document.getElementById("salesChart");
+const salesChart = new Chart(ctx, {
+  type: "line",
+  data: chartData,
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
