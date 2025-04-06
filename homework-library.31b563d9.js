@@ -690,24 +690,19 @@ document.addEventListener("keydown", (e)=>{
     if (e.key === keys[currentIndexKey]) {
         currentIndexKey++;
         if (currentIndexKey < keys.length) ;
-        else {
-            PNotify.success({
-                title: "\u0412\u0456\u0442\u0430\u044E!",
-                text: "\u0412\u0438 \u043D\u0430\u0442\u0438\u0441\u043D\u0443\u043B\u0438 \u043D\u0430 \u0432\u0441\u0456 \u043A\u043B\u0430\u0432\u0456\u0448\u0456 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E"
-            });
-            document.removeEventListener("keydown", keyDown);
-        }
+        else PNotify.success({
+            title: "\u0412\u0456\u0442\u0430\u044E!",
+            text: "\u0412\u0438 \u043D\u0430\u0442\u0438\u0441\u043D\u0443\u043B\u0438 \u043D\u0430 \u0432\u0441\u0456 \u043A\u043B\u0430\u0432\u0456\u0448\u0456 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E"
+        });
     } else PNotify.error({
         title: "\u041D\u0410\u0422\u0418\u0421\u041D\u0406\u0422\u042C",
         text: "\u041D\u0430 \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u0443 \u043A\u043B\u0430\u0432\u0456\u0448\u0443"
     });
     updateKey();
-    document.addEventListener("keydown", keyDown);
 });
 function startNewGame() {
     currentIndexKey = 0;
     updateKey();
-    document.addEventListener("keydown", keyDown);
 }
 newGame.addEventListener("click", startNewGame);
 // 2 task
@@ -784,28 +779,20 @@ const chartData = {
             borderWidth: 1
         }
     ]
-}; // const config = {
- //   type: "line",
- //   data: data,
- //   options: {},
- // };
- // const ctx = document.getElementById("sales-chart");
- // const salesChart = new Chart(ctx, {
- //   type: "line",
- //   data: data,
- //   options: {
- //     responsive: true,
- //     plugins: {
- //       legend: {
- //         position: "top",
- //       },
- //       title: {
- //         display: true,
- //         text: "Chart.js Line Chart",
- //       },
- //     },
- //   },
- // });
+};
+const ctx = document.getElementById("salesChart");
+const salesChart = new Chart(ctx, {
+    type: "line",
+    data: chartData,
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
 
 },{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire5e4c", {})
 
