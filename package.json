@@ -17,7 +17,7 @@
     "@pnotify/core": "^5.2.0",
     "parcel": "^2.14.4",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "pnotify": "^5.2.0",
+    "pnotify": "^4.0.1",
     "posthtml-include": "^2.0.1"
   },
   "dependencies": {
